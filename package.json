@@ -1,9 +1,11 @@
 {
   "name": "buks",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:server": "app.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -19,8 +21,12 @@
     "@angular/platform-browser": "~9.1.11",
     "@angular/platform-browser-dynamic": "~9.1.11",
     "@angular/router": "~9.1.11",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
     "rxjs": "~6.5.4",
+    "swagger-ui-express": "^4.1.4",
     "tslib": "^1.10.0",
+    "yamljs": "^0.3.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
