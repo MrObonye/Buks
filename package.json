@@ -1,15 +1,14 @@
 {
   "name": "buks",
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "start:server": "app.js",
+    "start": "ng serve # Runs as ES module",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start:server": "nodemon app.js # Runs as ES module"
   },
   "private": true,
   "dependencies": {
