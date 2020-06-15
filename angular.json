@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "buks"
+    }
+  },
+  "defaultProject": "buks",
+  "cli": {
+    "analytics": "758e5b32-39d2-4801-a4a9-d5c35e67e32c"
+  }
 }
