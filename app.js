@@ -7,6 +7,6 @@ const port = process.env.PORT || 3000;
 const swaggerDocument = YAML.load('./server/openapi.yaml');
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/', (req, res) => res.send(`Server running at http://localhost:${port}`));
 
 app.listen(port, () => console.log(`Buks app listening at http://localhost:${port}`));
