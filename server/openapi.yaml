@@ -91,7 +91,11 @@ components:
     User:
       type: object
       properties:
-        name:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        username:
           type: string
         email:
           type: string
