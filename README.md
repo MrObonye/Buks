@@ -1,5 +1,8 @@
 # Buks
 
+
+[![License](http://img.shields.io/badge/license-MIT-blue.svg)](http://opensource.org/licenses/MIT)
+
 ## A Library app
 
 Buks is an application that provides users with access to books from wherever they are.
