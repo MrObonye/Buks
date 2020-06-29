@@ -95,7 +95,7 @@ components:
           type: string
         lastName:
           type: string
-        username:
+        membershipType:
           type: string
         email:
           type: string
