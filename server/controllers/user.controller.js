@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 import User from '../models/user.model';
 
 export default class UserController {
@@ -19,34 +19,21 @@ export default class UserController {
      * @return {Object}        - returns an http response object
      */
 
-  async createUser(req, res, next) {
-    const { username } = req.body;
-    const { email } = req.body;
-    const { password } = req.body;
-    let data;
+  async createUser(req) {
+    const userModel = {
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      password: req.body.password,
+      membershipType: req.body.membershipType
+    };
 
-    if (email.length > 0 && password.length > 0) {
-      data = {
-        email,
-        password
-      };
-    } else if (username.length > 0 && password.length > 0) {
-      data = {
-        username,
-        password
-      };
-    } else {
-      res.json({
-        status: 400,
-        message: 'Invalid Input'
-      });
-    }
-    this.user = User.findOne({ data });
+    this.user = await User.findOne({ email: userModel.email });
     if (this.user) {
       throw new Error('Email already exists!');
     }
-    this.user = new User(req.body);
-    this.user.password = await bcrypt.hash(this.user.password, 10);
+    this.user = new User(userModel);
+    this.user.password = await bcrypt.hash(userModel.password, 10);
     return this.user.save();
   }
 }

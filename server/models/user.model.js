@@ -2,7 +2,6 @@ import mongoose from 'mongoose';
 
 const { Schema } = mongoose;
 const UserSchema = new Schema({
-  username: { type: String, required: true },
   firstName: {
     type: String
   },
@@ -22,12 +21,6 @@ const UserSchema = new Schema({
     Enum: ['bronze', 'silver', 'gold'],
     defaultValue: 'bronze',
     required: true
-  },
-  passwordResetToken: {
-    type: String
-  },
-  authId: {
-    type: String
   }
 });
 const User = mongoose.model('User', UserSchema);
