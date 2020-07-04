@@ -5,6 +5,7 @@ import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
 import dbConnection from './util/database';
 import userRouter from './routes/user.route';
+import bookRouter from './routes/book.route';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -29,6 +30,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/v1/auth/', userRouter);
+app.use('/api/v1/', bookRouter);
 
 /** database connection */
 // eslint-disable-next-line no-console
