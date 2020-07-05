@@ -19,9 +19,7 @@ const validateLimitAndOffset = (req, res, next) => {
     });
   }
   next();
-  return res.json({
-    message: 'Everything seems okay'
-  });
+  return true;
 };
 
 export default validateLimitAndOffset;

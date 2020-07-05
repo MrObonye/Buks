@@ -14,9 +14,12 @@ export default class BookController {
   *
   * @return {Object}        - express http response object
   */
-  async getBooks(req, res, next) {
-    this.book = await Book.findall()
-      .then(() => res.status(200).send({ books: this.book }))
-      .catch((error) => next(error));
+  // eslint-disable-next-line class-methods-use-this
+  async getBooks() {
+    this.books = await Book.find();
+    if (!this.books) {
+      throw new Error('There are no books!');
+    }
+    return this.books;
   }
 }
