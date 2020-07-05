@@ -22,4 +22,12 @@ export default class BookController {
     }
     return this.books;
   }
+
+  async getBook(idModel) {
+    this.book = await Book.findById(idModel);
+    if (!this.book) {
+      throw new Error('Book not found');
+    }
+    return this.book;
+  }
 }
