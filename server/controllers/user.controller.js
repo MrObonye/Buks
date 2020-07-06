@@ -1,4 +1,5 @@
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 // import dotenv from 'dotenv';
 import User from '../models/user.model';
 
@@ -35,5 +36,18 @@ export default class UserController {
     this.user = new User(userModel);
     this.user.password = await bcrypt.hash(userModel.password, 10);
     return this.user.save();
+  }
+
+  async getUser(loginModel) {
+    this.user = await User.findOne({ email: loginModel.email });
+    if (!this.user) {
+      throw new Error('Incorrect email or password');
+    }
+    const isMatch = await bcrypt.compare(loginModel.password, this.user.password);
+    if (!isMatch) {
+      throw new Error('Incorrect email or password');
+    }
+    const token = jwt.sign({ id: this.user.id }, '1913155164FC4B4DA16CCEA62C6C98A6', { expiresIn: '2Hrs' });
+    return { token };
   }
 }
