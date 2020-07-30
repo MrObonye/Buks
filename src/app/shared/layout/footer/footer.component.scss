@@ -4,6 +4,7 @@
   height: 250px;
   background-color: #333333
 }
+
 .footer:after {
 position: absolute;
 height: 100%;
@@ -17,4 +18,26 @@ left: 0;
 transform-origin: top left;
 transform: skewY(-3deg);
 
+}
+.left-column {
+  height: 100%;
+  width: 400px;
+  z-index: 1;
+}
+.middle-column {
+  height: 200x;
+  width: 400px;
+  z-index: 1;
+}
+.right-column {
+  height: 200px;
+  width: 400px;
+  z-index: 1;
+}
+ .big:hover {
+   height: 30px;
+   width: 30px;
+ }
+.fill-red {
+  fill: whitesmoke
 }
