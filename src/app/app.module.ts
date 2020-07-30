@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { MainComponent, HeaderComponent, FooterComponent   } from './shared/index';
+import { MainComponent, HeaderComponent, FooterComponent, IconsModule   } from './shared/index';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,8 @@ import { MainComponent, HeaderComponent, FooterComponent   } from './shared/inde
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    IconsModule
   ],
   providers: [],
   bootstrap: [MainComponent]
