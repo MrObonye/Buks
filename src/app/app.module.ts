@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MainComponent, HeaderComponent, FooterComponent, IconsModule   } from './shared/index';
+import { ViewModule } from './view/view.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { MainComponent, HeaderComponent, FooterComponent, IconsModule   } from '
   imports: [
     BrowserModule,
     AppRoutingModule,
-    IconsModule
+    IconsModule,
+    ViewModule
   ],
   providers: [],
   bootstrap: [MainComponent]

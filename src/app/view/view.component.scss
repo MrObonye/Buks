@@ -1,0 +1,19 @@
+#hero {
+  background-image: url('src/assets/undraw_mobile_devices_k1ok.svg');
+  background-color: #ffffff; /* Used if the image is unavailable */
+  height: 500px; /* You must set a specified height */
+  background-position: right 45px bottom 20px;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  
+.hero-line {
+    font-size: 100px;
+}
+}
+.left-border {
+    border-left-color: rgb(68, 187, 241);
+    border-right-color: white;
+    border-top-color: white;
+    border-bottom-color: white;
+    border-width: 10px;
+    border-style: solid;
+}
